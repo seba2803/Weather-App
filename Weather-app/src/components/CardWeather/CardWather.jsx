@@ -1,6 +1,6 @@
 import { useWeatherStore } from '../store/store';
 import { useEffect } from 'react';
-import { IconSun, IconSunrise, IconSunset } from './icons/Icons';
+import { IconSunrise, IconSunset } from './icons/Icons';
 import { weatherForHour } from './weatherForHour';
 import { iconType } from './weatherForHour';
 
