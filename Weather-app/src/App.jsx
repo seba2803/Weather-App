@@ -1,6 +1,7 @@
 import './App.css';
 import Home from './components/Home/Home';
 import CardWeather from './components/CardWeather/CardWather';
+
 function App() {
   // const infoClima = useWeatherStore((state) => state.infoClima);
   // const fetchData = useWeatherStore((state) => state.fetchData);

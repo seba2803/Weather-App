@@ -2,6 +2,7 @@ import { useWeatherStore } from '../store/store';
 import { useEffect } from 'react';
 import { IconSun, IconSunrise, IconSunset } from './icons/Icons';
 import { weatherForHour } from './weatherForHour';
+import { iconType } from './weatherForHour';
 
 const CardWeather = () => {
   const [infoClima, fetchData] = useWeatherStore((state) => [
@@ -10,14 +11,17 @@ const CardWeather = () => {
   ]);
 
   useEffect(() => {
-    fetchData('Pueblo Nuevo, la libertad');
+    fetchData('pueblo nuevo, la libertad');
   }, []);
 
   return (
     <div>
       <div>
         <h1>{infoClima[0]?.current?.temp_c} °C</h1>
-        <IconSun />
+        {iconType(
+          infoClima[0].current.is_day,
+          infoClima[0].current.condition.text
+        )}
         <h2>
           {infoClima[0]?.location?.name}, {infoClima[0]?.location?.region}
         </h2>
@@ -32,8 +36,10 @@ const CardWeather = () => {
         infoClima[0]?.forecast?.forecastday
       )}
       <div>
+        <h3>Amanecer</h3>
         <IconSunrise />
         <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro.sunrise}</h3>
+        <h3>Atardecer</h3>
         <IconSunset />
         <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro.sunset}</h3>
       </div>

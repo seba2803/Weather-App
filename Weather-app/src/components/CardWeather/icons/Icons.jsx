@@ -3,7 +3,7 @@ export const IconSunrise = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-sunrise'
+      className='icon icon-tabler icon-tabler-sunrise'
       width='44'
       height='44'
       viewBox='0 0 24 24'
@@ -25,7 +25,7 @@ export const IconSunset = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-sunset'
+      className='icon icon-tabler icon-tabler-sunset'
       width='44'
       height='44'
       viewBox='0 0 24 24'
@@ -94,7 +94,7 @@ export const IconCloudRain = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-cloud-rain'
+      className='icon icon-tabler icon-tabler-cloud-rain'
       width='44'
       height='44'
       viewBox='0 0 24 24'
@@ -115,7 +115,7 @@ export const IconCloudy = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-cloud-filled'
+      className='icon icon-tabler icon-tabler-cloud-filled'
       width='44'
       height='44'
       viewBox='0 0 24 24'
@@ -139,7 +139,7 @@ export const IconCloudSnow = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-cloud-snow'
+      className='icon icon-tabler icon-tabler-cloud-snow'
       width='44'
       height='44'
       viewBox='0 0 24 24'
@@ -161,7 +161,7 @@ export const IconCloudStorm = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-cloud-storm'
+      className='icon icon-tabler icon-tabler-cloud-storm'
       width='44'
       height='44'
       viewBox='0 0 24 24'
@@ -185,9 +185,9 @@ export const IconMoonClear = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-moon-stars'
-      width='44'
-      height='44'
+      className='icon icon-tabler icon-tabler-moon-stars'
+      width={44}
+      height={44}
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -208,9 +208,9 @@ export const IconNight = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      class='icon icon-tabler icon-tabler-moon'
-      width='44'
-      height='44'
+      className='icon icon-tabler icon-tabler-moon'
+      width={44}
+      height={44}
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -220,6 +220,27 @@ export const IconNight = () => {
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
       <path d='M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z'></path>
+    </svg>
+  );
+};
+
+//? gota
+export const IconDrop = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      className='icon icon-tabler icon-tabler-droplet'
+      width={30}
+      height={30}
+      viewBox='0 0 24 24'
+      strokeWidth='1'
+      stroke='currentColor'
+      fill='none'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+      <path d='M7.502 19.423c2.602 2.105 6.395 2.105 8.996 0c2.602 -2.105 3.262 -5.708 1.566 -8.546l-4.89 -7.26c-.42 -.625 -1.287 -.803 -1.936 -.397a1.376 1.376 0 0 0 -.41 .397l-4.893 7.26c-1.695 2.838 -1.035 6.441 1.567 8.546z'></path>
     </svg>
   );
 };
