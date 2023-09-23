@@ -1,26 +1,25 @@
 import { useWeatherStore } from '../store/store';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 import { IconSunrise, IconSunset } from './icons/Icons';
-import { weatherForHour } from './weatherForHour';
-import { iconType } from './weatherForHour';
+import { weatherForHour } from './auxComponents/weatherForHour';
+import { weatherForDay } from './auxComponents/weatherForDay';
+import { iconType } from './auxComponents/weatherForHour';
 
 const CardWeather = () => {
-  const [infoClima, fetchData] = useWeatherStore((state) => [
-    state.infoClima,
-    state.fetchData,
-  ]);
+  const [infoClima] = useWeatherStore((state) => [state.infoClima]);
 
-  useEffect(() => {
-    fetchData('pueblo nuevo, la libertad');
-  }, []);
+  console.log(infoClima);
+  // useEffect(() => {
+  //   fetchData('pueblo nuevo, la libertad');
+  // }, []);
 
   return (
     <div>
       <div>
         <h1>{infoClima[0]?.current?.temp_c} °C</h1>
         {iconType(
-          infoClima[0].current.is_day,
-          infoClima[0].current.condition.text
+          infoClima[0]?.current.is_day,
+          infoClima[0]?.current.condition.text
         )}
         <h2>
           {infoClima[0]?.location?.name}, {infoClima[0]?.location?.region}
@@ -31,10 +30,13 @@ const CardWeather = () => {
           térmica {infoClima[0]?.current.feelslike_c} °
         </h4>
       </div>
-      {weatherForHour(
-        infoClima[0]?.location?.localtime.split(' '),
-        infoClima[0]?.forecast?.forecastday
-      )}
+      <div>
+        {weatherForHour(
+          infoClima[0]?.location?.localtime.split(' '),
+          infoClima[0]?.forecast?.forecastday
+        )}
+      </div>
+      <div>{weatherForDay(infoClima[0]?.forecast?.forecastday)}</div>
       <div>
         <h3>Amanecer</h3>
         <IconSunrise />

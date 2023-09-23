@@ -8,7 +8,7 @@ import {
   IconMoonClear,
   IconNight,
   IconDrop,
-} from './icons/Icons';
+} from '../icons/Icons';
 
 export const weatherForHour = (hour, infoClima) => {
   // desestructuro la fecha y horario de hour
@@ -30,19 +30,15 @@ export const weatherForHour = (hour, infoClima) => {
   // saco solo las 24 horas siguientes desde la hora actual
   const climaPorHora = horarios.slice(index + 1, index + 24);
   // retornar el tiempo por hora
-  return (
-    <div>
-      {climaPorHora.map((el, index) => (
-        <div key={index}>
-          <h3>{el.time.split(' ')[1]}</h3>
-          {iconType(el.is_day, el.condition.text)}
-          <h3>{el.temp_c} °</h3>
-          <IconDrop />
-          <h3>{el.humidity}%</h3>
-        </div>
-      ))}
+  return climaPorHora.map((el, index) => (
+    <div key={index}>
+      <h3>{el.time.split(' ')[1]}</h3>
+      {iconType(el.is_day, el.condition.text)}
+      <h3>{el.temp_c} °</h3>
+      <IconDrop />
+      <h3>{el.humidity}%</h3>
     </div>
-  );
+  ));
 };
 // funcion que devuelve el icono que corresponde
 export function iconType(isDay, condition) {
