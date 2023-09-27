@@ -1,0 +1,13 @@
+.home {
+  display: none;
+}
+
+.continuar {
+  display: none;
+}
+
+input:checked ~ .home {
+  display: flex;
+  transform: translateY(10px);
+  transition: all 1.8s;
+}

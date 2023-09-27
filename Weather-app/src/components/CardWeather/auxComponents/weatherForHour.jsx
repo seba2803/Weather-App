@@ -7,7 +7,7 @@ import {
   IconPartlyCloud,
   IconMoonClear,
   IconNight,
-  IconDrop,
+  IconHumidity,
 } from '../icons/Icons';
 
 export const weatherForHour = (hour, infoClima) => {
@@ -35,8 +35,8 @@ export const weatherForHour = (hour, infoClima) => {
       <h3>{el.time.split(' ')[1]}</h3>
       {iconType(el.is_day, el.condition.text)}
       <h3>{el.temp_c} °</h3>
-      <IconDrop />
-      <h3>{el.humidity}%</h3>
+      <IconHumidity />
+      <h3>Humedad {el.humidity}%</h3>
     </div>
   ));
 };

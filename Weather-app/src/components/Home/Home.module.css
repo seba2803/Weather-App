@@ -1,0 +1,15 @@
+.Home {
+  display: flex;
+}
+
+.option {
+  display: none;
+}
+
+.view {
+  display: block;
+}
+
+.noview {
+  display: none;
+}

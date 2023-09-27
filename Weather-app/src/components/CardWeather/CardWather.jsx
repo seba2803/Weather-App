@@ -1,5 +1,6 @@
 import { useWeatherStore } from '../store/store';
 // import { useEffect } from 'react';
+import { IndexUV, IconDrop, IconWind } from './icons/Icons';
 import { IconSunrise, IconSunset } from './icons/Icons';
 import { weatherForHour } from './auxComponents/weatherForHour';
 import { weatherForDay } from './auxComponents/weatherForDay';
@@ -12,6 +13,14 @@ const CardWeather = () => {
   // useEffect(() => {
   //   fetchData('pueblo nuevo, la libertad');
   // }, []);
+
+  const controlUV = (indice) => {
+    if (indice >= 0 && indice <= 2) return 'Bajo';
+    if (indice >= 3 && indice <= 5) return 'Moderado';
+    if (indice >= 6 && indice <= 7) return 'Alto';
+    if (indice >= 8 && indice <= 10) return 'Muy alto';
+    if (indice >= 11) return 'Extremo';
+  };
 
   return (
     <div>
@@ -44,6 +53,23 @@ const CardWeather = () => {
         <h3>Atardecer</h3>
         <IconSunset />
         <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro.sunset}</h3>
+      </div>
+      <div>
+        <div>
+          <IndexUV />
+          <h3>Índice UV</h3>
+          <p>{controlUV(infoClima[0]?.current.uv)}</p>
+        </div>
+        <div>
+          <IconDrop />
+          <h3>Humedad</h3>
+          <p>{infoClima[0]?.current.humidity}%</p>
+        </div>
+        <div>
+          <IconWind />
+          <h3>Viento</h3>
+          <p>{infoClima[0]?.current.wind_kph} Km/h</p>
+        </div>
       </div>
     </div>
   );

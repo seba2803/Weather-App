@@ -244,3 +244,77 @@ export const IconDrop = () => {
     </svg>
   );
 };
+
+//? indexUV
+
+export const IndexUV = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      className='icon icon-tabler icon-tabler-uv-index'
+      width={44}
+      height={44}
+      viewBox='0 0 24 24'
+      stroke-width={1}
+      stroke='currentColor'
+      fill='none'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+      <path d='M3 12h1m16 0h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7m-9.7 5.7a4 4 0 1 1 8 0'></path>
+      <path d='M12 4v-1'></path>
+      <path d='M13 16l2 5h1l2 -5'></path>
+      <path d='M6 16v3a2 2 0 1 0 4 0v-3'></path>
+    </svg>
+  );
+};
+
+// ? Wind
+
+export const IconWind = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      className='icon icon-tabler icon-tabler-wind'
+      width={44}
+      height={44}
+      viewBox='0 0 24 24'
+      stroke-width={1.25}
+      stroke='currentColor'
+      fill='none'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+      <path d='M5 8h8.5a2.5 2.5 0 1 0 -2.34 -3.24'></path>
+      <path d='M3 12h15.5a2.5 2.5 0 1 1 -2.34 3.24'></path>
+      <path d='M4 16h5.5a2.5 2.5 0 1 1 -2.34 3.24'></path>
+    </svg>
+  );
+};
+
+// ? Humidity
+
+export const IconHumidity = () => {
+  return (
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      className='icon icon-tabler icon-tabler-mist'
+      width={30}
+      height={30}
+      viewBox='0 0 24 24'
+      stroke-width={1.25}
+      stroke='currentColor'
+      fill='none'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    >
+      <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
+      <path d='M5 5h3m4 0h9'></path>
+      <path d='M3 10h11m4 0h1'></path>
+      <path d='M5 15h5m4 0h7'></path>
+      <path d='M3 20h9m4 0h3'></path>
+    </svg>
+  );
+};
