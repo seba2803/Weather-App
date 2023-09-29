@@ -1,18 +1,21 @@
 import { useState } from 'react';
 import { useWeatherStore } from '../store/store';
 import style from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
   const [lugar, setLugar] = useState('');
   // para estilos
   const [cambio, setCambio] = useState(true);
 
-  const [busqueda, fetchBusqueda] = useWeatherStore((state) => [
+  const [busqueda, fetchBusqueda, fetchData] = useWeatherStore((state) => [
     state.busqueda,
     state.fetchBusqueda,
+    state.fetchData,
   ]);
 
   const handleChange = (event) => {
+    console.log(event.target.value);
     setLugar(event.target.value);
 
     if (
@@ -22,27 +25,38 @@ const Home = () => {
     )
       fetchBusqueda(event.target.value);
 
-    console.log(event.target);
-
-    if (event.target.value.length >= 20 || event.target.value.length <= 3) {
+    if (
+      event.target.value.length >= 20 ||
+      event.target.value.length <= 3 ||
+      event.target.id.length
+    ) {
       setCambio(false);
     } else {
       setCambio(true);
     }
   };
+  console.log(busqueda);
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    fetchData(lugar);
+    navigate('/detail');
+  };
 
   return (
     <div className={style.Home}>
       <label>Ingresa tu país o provincia para continuar...</label>
-      <input type='text' value={lugar} onChange={handleChange} />
+      <input type='search' value={lugar} onChange={handleChange} />
+      <button onClick={handleClick}>{`-->`}</button>
       <div className={cambio ? style.view : style.noview}>
-        {busqueda?.map((val) => (
-          <label htmlFor='lugar'>
+        {busqueda?.map((val, index) => (
+          <label className={style.item}>
             {' '}
             {val.name}, {val.region}
             <input
-              id='lugar'
-              type='checkbox'
+              name='lugar'
+              type='radio'
               onClick={handleChange}
               value={`${val.name},${val.region}`}
               className={style.option}

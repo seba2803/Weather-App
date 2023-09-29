@@ -58,7 +58,9 @@ const LandingPage = () => {
           del Tiempo es tu compañero confiable.
         </h2>
 
-        <label htmlFor='viewmore'>continuar</label>
+        <label htmlFor='viewmore' className={style.label}>
+          continuar
+        </label>
       </div>
       <div className={style.home}>
         <Home />

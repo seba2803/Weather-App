@@ -13,3 +13,11 @@
 .noview {
   display: none;
 }
+
+.item {
+  margin: 10px;
+}
+
+.item:hover {
+  color: aquamarine;
+}

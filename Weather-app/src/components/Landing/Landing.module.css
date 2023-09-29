@@ -6,6 +6,16 @@
   display: none;
 }
 
+.label {
+  cursor: pointer;
+  background-color: azure;
+  color: black;
+  padding: 4px;
+  margin: 10px;
+  border: outset black 3px;
+  border-radius: 5px;
+}
+
 input:checked ~ .home {
   display: flex;
   transform: translateY(10px);
