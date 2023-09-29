@@ -5,6 +5,7 @@ import { IconSunrise, IconSunset } from './icons/Icons';
 import { weatherForHour } from './auxComponents/weatherForHour';
 import { weatherForDay } from './auxComponents/weatherForDay';
 import { iconType } from './auxComponents/weatherForHour';
+import style from './CardWeather.module.css';
 
 const CardWeather = () => {
   const [infoClima] = useWeatherStore((state) => [state.infoClima]);
@@ -23,13 +24,15 @@ const CardWeather = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h1>{infoClima[0]?.current?.temp_c} °C</h1>
-        {iconType(
-          infoClima[0]?.current.is_day,
-          infoClima[0]?.current.condition.text
-        )}
+    <div className={style.container}>
+      <div className={style.head}>
+        <div>
+          <h1>{infoClima[0]?.current?.temp_c} °C</h1>
+          {iconType(
+            infoClima[0]?.current.is_day,
+            infoClima[0]?.current.condition.text
+          )}
+        </div>
         <h2>
           {infoClima[0]?.location?.name}, {infoClima[0]?.location?.region}
         </h2>
@@ -39,13 +42,15 @@ const CardWeather = () => {
           térmica {infoClima[0]?.current.feelslike_c} °
         </h4>
       </div>
-      <div>
+      <div className={style.weatherForHour}>
         {weatherForHour(
           infoClima[0]?.location?.localtime.split(' '),
           infoClima[0]?.forecast?.forecastday
         )}
       </div>
-      <div>{weatherForDay(infoClima[0]?.forecast?.forecastday)}</div>
+      <div className={style.weatherForDay}>
+        {weatherForDay(infoClima[0]?.forecast?.forecastday)}
+      </div>
       <div>
         <h3>Amanecer</h3>
         <IconSunrise />
