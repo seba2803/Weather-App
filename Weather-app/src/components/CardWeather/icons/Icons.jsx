@@ -4,8 +4,8 @@ export const IconSunrise = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-sunrise'
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       color='rgb(240,210,0)'
       viewBox='0 0 24 24'
       stroke-width='1.75'
@@ -27,8 +27,8 @@ export const IconSunset = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-sunset'
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       color='rgb(250,160,0)'
       viewBox='0 0 24 24'
       stroke-width='2'
@@ -49,8 +49,8 @@ export const IconSun = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-sun-filled'
-      width={44}
-      height={44}
+      width={60}
+      height={60}
       color='yellow'
       viewBox='0 0 24 24'
       stroke-width={1.25}
@@ -114,8 +114,8 @@ export const IconSun = () => {
 export const IconPartlyCloud = () => {
   return (
     <svg
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       viewBox='0 0 24 24'
       color='rgb(160,160,160)'
       fill='none'
@@ -137,8 +137,8 @@ export const IconCloudRain = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-cloud-rain'
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -158,8 +158,8 @@ export const IconCloudy = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-cloud-filled'
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       color='grey'
       viewBox='0 0 24 24'
       stroke-width='2'
@@ -170,7 +170,7 @@ export const IconCloudy = () => {
     >
       <path stroke='none' d='M0 0h24v24H0z' fill='none'></path>
       <path
-        d='M10.04 4.305c2.195 -.667 4.615 -.224 6.36 1.176c1.386 1.108 2.188 2.686 2.252 4.34l.003 .212l.091 .003c2.3 .107 4.143 1.961 4.25 4.27l.004 .211c0 2.407 -1.885 4.372 -4.255 4.482l-.21 .005h-11.878l-.222 -.008c-2.94 -.11 -5.317 -2.399 -5.43 -5.263l-.005 -.216c0 -2.747 2.08 -5.01 4.784 -5.417l.114 -.016l.07 -.181c.663 -1.62 2.056 -2.906 3.829 -3.518l.244 -.08z'
+        d='M10.04 4.305c2.195 -.667 4.615 -.224 6.36 1.176c1.386 1.108 2.188 2.686 2.252 4.34l.003 .212l.091 .003c2.3 .107 4.143 1.961 4.25 4.27l.004 .211c0 2.407 -1.885 4.372 -4.255 4.482l-.21 .005h-11.878l-.222 -.008c-2.94 -.11 -5.317 -2.399 -5.43 -5.263l-.005 -.216c0 -2.607 2.08 -5.01 4.784 -5.417l.114 -.016l.07 -.181c.663 -1.62 2.056 -2.906 3.829 -3.518l.244 -.08z'
         stroke-width='0'
         fill='currentColor'
       ></path>
@@ -183,8 +183,8 @@ export const IconCloudSnow = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-cloud-snow'
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -205,8 +205,8 @@ export const IconCloudStorm = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-cloud-storm'
-      width='44'
-      height='44'
+      width={60}
+      height={60}
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -229,8 +229,8 @@ export const IconMoonClear = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-moon-stars'
-      width={44}
-      height={44}
+      width={60}
+      height={60}
       color='yellow'
       viewBox='0 0 24 24'
       stroke-width='2'
@@ -253,8 +253,8 @@ export const IconNight = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-moon'
-      width={44}
-      height={44}
+      width={60}
+      height={60}
       color='yellow'
       viewBox='0 0 24 24'
       stroke-width='2'
@@ -275,8 +275,8 @@ export const IconDrop = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-droplet'
-      width={30}
-      height={30}
+      width={60}
+      height={60}
       viewBox='0 0 24 24'
       strokeWidth='1'
       stroke='currentColor'
@@ -297,8 +297,8 @@ export const IndexUV = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-uv-index'
-      width={44}
-      height={44}
+      width={60}
+      height={60}
       color='yellow'
       viewBox='0 0 24 24'
       stroke-width={1}
@@ -323,8 +323,8 @@ export const IconWind = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-wind'
-      width={44}
-      height={44}
+      width={60}
+      height={60}
       color='white'
       viewBox='0 0 24 24'
       stroke-width={1.25}
@@ -348,8 +348,8 @@ export const IconHumidity = () => {
     <svg
       xmlns='http://www.w3.org/2000/svg'
       className='icon icon-tabler icon-tabler-mist'
-      width={30}
-      height={30}
+      width={60}
+      height={60}
       color='white'
       viewBox='0 0 24 24'
       stroke-width={1.25}

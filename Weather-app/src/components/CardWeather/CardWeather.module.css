@@ -1,8 +1,0 @@
-/* container */
-
-.head {
-  display: flex;
-  flex-direction: column;
-  background-color: gray;
-  width: 500px;
-}
