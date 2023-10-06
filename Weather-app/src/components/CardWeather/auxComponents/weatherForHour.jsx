@@ -31,7 +31,10 @@ export const weatherForHour = (hour, infoClima) => {
   const climaPorHora = horarios.slice(index + 1, index + 24);
   // retornar el tiempo por hora
   return climaPorHora.map((el, index) => (
-    <div key={index} className='flex-col hover:scale-110  m-3 text-center'>
+    <div
+      key={index}
+      className='flex-col hover:scale-105 transition ease-out duration-400  m-3 text-center'
+    >
       <h3 className='mb-2'>{el.time.split(' ')[1]}</h3>
       {iconType(el.is_day, el.condition.text)}
       <h3 className='m-1'>{el.temp_c} °</h3>

@@ -3,20 +3,19 @@
 @tailwind utilities;
 
 :root {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     rgb(150, 150, 150),
     rgb(44, 44, 210),
     rgb(30, 30, 220),
     black
-  );
-  font-family: system-ui;
-  color-scheme: light dark;
+  ); */
+  /* font-family: system-ui; */
+  /* color-scheme: light dark; */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
   /* overflow-x: none; */
   /* overflow: hidden; */
   /* overscroll-behavior: unset; */
@@ -29,14 +28,16 @@
 } */
 
 /* body {
-  margin: 0;
   display: flex;
   place-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   min-width: 320px;
   min-height: 100vh;
-}
+} */
 
-h1 {
+/* h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
