@@ -8,12 +8,16 @@ import { weatherForDay } from './auxComponents/weatherForDay';
 import { iconType } from './auxComponents/weatherForHour';
 
 const CardWeather = () => {
-  const [infoClima] = useWeatherStore((state) => [state.infoClima]);
+  const [infoClima, fetchData] = useWeatherStore((state) => [
+    state.infoClima,
+    state.fetchData,
+  ]);
 
-  console.log(infoClima);
-  // useEffect(() => {
-  //   fetchData('pueblo nuevo, la libertad');
-  // }, []);
+  const handleClick = () => {
+    fetchData(
+      `${infoClima[0]?.location?.name}, ${infoClima[0]?.location?.region}`
+    );
+  };
 
   const controlUV = (indice) => {
     if (indice >= 0 && indice <= 2) return 'Bajo';
@@ -85,6 +89,12 @@ const CardWeather = () => {
           <p>{infoClima[0]?.current.wind_kph} Km/h</p>
         </div>
       </div>
+      <button
+        className='font-semibold text-lg bg-gray-600 bg-opacity-70 p-1 rounded-md'
+        onClick={handleClick}
+      >
+        Actualizar
+      </button>
     </div>
   );
 };
