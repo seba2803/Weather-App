@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='flex h-fit m-0 p-0 box-border'>
+    <div>
       <Routes>
         <Route path='/' element={<LandingPage />} />
         <Route path='/detail' element={<CardWeather />} />

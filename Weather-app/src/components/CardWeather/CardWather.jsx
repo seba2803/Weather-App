@@ -1,5 +1,6 @@
 import { useWeatherStore } from '../store/store';
 // import { useEffect } from 'react';
+import Home from '../Home/Home';
 import { IndexUV, IconDrop, IconWind } from './icons/Icons';
 import { IconSunrise, IconSunset } from './icons/Icons';
 import { weatherForHour } from './auxComponents/weatherForHour';
@@ -23,7 +24,8 @@ const CardWeather = () => {
   };
 
   return (
-    <div className='grid place-items-center'>
+    <div className='grid place-items-center p-2 text-white'>
+      <Home />
       <div className='flex-col m-4 justify-center bg-slate-600 bg-opacity-60 rounded-xl shadow-2xl shadow-black border border-teal-100 h-72  w-full'>
         <div className='flex'>
           <h1 className='m-5 font-bold text-5xl phone:font-semibold phone:text-3xl'>

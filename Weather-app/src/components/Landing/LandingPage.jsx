@@ -2,12 +2,12 @@ import Home from '../Home/Home';
 
 const LandingPage = () => {
   return (
-    <div className=' flex-col justify-center items-center h-screen p-4 bg-zinc-700 phone:h-full'>
-      <div className=' flex-col text-center justify-center'>
+    <div className=' flex-col justify-center text-white h-screen'>
+      <div className=' flex-col text-center justify-center item-center p-2'>
         <h1 className='font-extrabold font-sans text-4xl m-5  border-b-4 border-solid rounded-lg'>
           Weather App
         </h1>
-        <h2 className='font-sans font-semibold text-xl'>
+        <h2 className='font-sans font-semibold text-xl m-2'>
           Bienvenido a la aplicación definitiva para mantenerte siempre un paso
           adelante en cuanto al clima. ¿Te has preguntado alguna vez cómo estará
           el clima en las próximas horas o días? ¿Necesitas saber si es seguro
@@ -16,7 +16,7 @@ const LandingPage = () => {
           detallada y precisa para que puedas planificar tu día con confianza.
         </h2>
         <h2 className='mt-5 font-bold text-2xl'>En ella encontrarás</h2>
-        <ol className='felx text-left border-2 rounded-lg p-3'>
+        <ol className='flex-col text-left border-2 rounded-lg p-3 m-2'>
           <li className='font-bold text-xl'>Pronóstico por Hora</li>{' '}
           <p>
             Podrás obtener un pronóstico del tiempo por hora para tu ubicación
@@ -51,14 +51,16 @@ const LandingPage = () => {
           </p>
         </ol>
 
-        <h2 className='font-sans font-semibold text-xl m-3'>
+        <h2 className='font-sans font-semibold text-xl mt-4'>
           Así que, ya sea que estés planeando un picnic, una jornada en la
           playa, un viaje de negocios o simplemente quieras estar bien preparado
           para cualquier eventualidad climática,Esta aplicación de Pronóstico
           del Tiempo es tu compañero confiable.
         </h2>
       </div>
-      <Home />
+      <div className='backdrop-blur-2xl mt-5'>
+        <Home />
+      </div>
     </div>
   );
 };

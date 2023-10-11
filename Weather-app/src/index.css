@@ -3,12 +3,15 @@
 @tailwind utilities;
 
 :root {
-  /* background-image: linear-gradient(
+  background-image: linear-gradient(
     rgb(150, 150, 150),
-    rgb(44, 44, 210),
-    rgb(30, 30, 220),
+    rgb(64, 64, 210),
+    rgb(40, 40, 200),
+    rgb(120, 120, 200),
     black
-  ); */
+  );
+  background-position: center;
+  background-attachment: fixed;
   /* font-family: system-ui; */
   /* color-scheme: light dark; */
   font-synthesis: none;
@@ -16,6 +19,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
   /* overflow-x: none; */
   /* overflow: hidden; */
   /* overscroll-behavior: unset; */
