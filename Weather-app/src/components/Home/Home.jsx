@@ -14,7 +14,6 @@ const Home = () => {
   ]);
 
   const handleChange = (event) => {
-    console.log(event.target.value);
     setLugar(event.target.value);
 
     if (
