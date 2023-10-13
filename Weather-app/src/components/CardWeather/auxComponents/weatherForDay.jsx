@@ -18,8 +18,10 @@ export const weatherForDay = (forecast) => {
         <IconSun /> <IconNight />
       </div>
       <div className='flex text-center justify-center'>
-        <h3 className='phone:text-sm mt-4'>{Math.floor(el.day.maxtemp_c)}°/</h3>
-        <h3 className='phone:text-sm mt-4'> {Math.floor(el.day.mintemp_c)}°</h3>
+        <h3 className='phone:text-lg  mt-4'>
+          {Math.floor(el.day.maxtemp_c)}°/
+        </h3>
+        <h3 className='phone:text-lg mt-4'> {Math.floor(el.day.mintemp_c)}°</h3>
       </div>
     </div>
   ));

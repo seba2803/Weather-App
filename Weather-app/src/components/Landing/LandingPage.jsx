@@ -1,8 +1,16 @@
-import Home from '../Home/Home';
+import { useWeatherStore } from '../store/store';
 
 const LandingPage = () => {
+  const theme = useWeatherStore((state) => state.theme);
+
   return (
-    <div className=' flex-col justify-center text-white h-screen'>
+    <div
+      className={
+        theme == 'light'
+          ? 'flex-col justify-center text-gray-800'
+          : 'flex-col justify-center text-gray-200'
+      }
+    >
       <div className=' flex-col text-center justify-center item-center p-2'>
         <h1 className='font-extrabold font-sans text-4xl m-5  border-b-4 border-solid rounded-lg'>
           Weather App
@@ -16,7 +24,13 @@ const LandingPage = () => {
           detallada y precisa para que puedas planificar tu día con confianza.
         </h2>
         <h2 className='mt-5 font-bold text-2xl'>En ella encontrarás</h2>
-        <ol className='flex-col text-left border-2 rounded-lg p-3 m-2'>
+        <ol
+          className={
+            theme == 'light'
+              ? 'flex-col text-left border-2 rounded-lg p-3 m-2 bg-blue-200 text-blue-500'
+              : 'flex-col text-left border-2 rounded-lg p-3 m-2 bg-blue-950 text-blue-200'
+          }
+        >
           <li className='font-bold text-xl'>Pronóstico por Hora</li>{' '}
           <p>
             Podrás obtener un pronóstico del tiempo por hora para tu ubicación
@@ -57,9 +71,6 @@ const LandingPage = () => {
           para cualquier eventualidad climática,Esta aplicación de Pronóstico
           del Tiempo es tu compañero confiable.
         </h2>
-      </div>
-      <div className='backdrop-blur-2xl mt-5'>
-        <Home />
       </div>
     </div>
   );

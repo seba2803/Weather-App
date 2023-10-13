@@ -8,9 +8,10 @@ import { weatherForDay } from './auxComponents/weatherForDay';
 import { iconType } from './auxComponents/weatherForHour';
 
 const CardWeather = () => {
-  const [infoClima, fetchData] = useWeatherStore((state) => [
+  const [infoClima, fetchData, theme] = useWeatherStore((state) => [
     state.infoClima,
     state.fetchData,
+    state.theme,
   ]);
 
   const handleClick = () => {
@@ -28,9 +29,20 @@ const CardWeather = () => {
   };
 
   return (
-    <div className='grid place-items-center p-2 text-white'>
-      <Home />
-      <div className='flex-col m-4 justify-center bg-slate-600 bg-opacity-60 rounded-xl shadow-2xl shadow-black border border-teal-100 h-72  w-full'>
+    <div
+      className={
+        theme == 'light'
+          ? 'grid place-items-center p-2 text-gray-800'
+          : 'grid place-items-center p-2 text-gray-200'
+      }
+    >
+      <div
+        className={
+          theme == 'light'
+            ? 'flex-col m-4 justify-center bg-white bg-opacity-20 rounded-xl shadow-2xl shadow-black border border-teal-100 h-72  w-full'
+            : 'flex-col m-4 justify-center bg-white bg-opacity-10 rounded-xl shadow-2xl shadow-black border border-teal-100 h-72  w-full'
+        }
+      >
         <div className='flex'>
           <h1 className='m-5 font-bold text-5xl phone:font-semibold phone:text-3xl'>
             {infoClima[0]?.current?.temp_c} °C
@@ -51,16 +63,34 @@ const CardWeather = () => {
           Sensación térmica {Math.floor(infoClima[0]?.current.feelslike_c)} °
         </h4>
       </div>
-      <div className='flex m-4 overflow-x-scroll w-full h-full bg-slate-600 bg-opacity-60 rounded-xl shadow-2xl shadow-black border border-teal-100'>
+      <div
+        className={
+          theme == 'light'
+            ? 'flex m-4 overflow-x-scroll w-full h-full  bg-white bg-opacity-20 rounded-xl shadow-2xl shadow-black border border-teal-100'
+            : 'flex m-4 overflow-x-scroll w-full h-full  bg-white bg-opacity-10 rounded-xl shadow-2xl shadow-black border border-teal-100'
+        }
+      >
         {weatherForHour(
           infoClima[0]?.location?.localtime.split(' '),
           infoClima[0]?.forecast?.forecastday
         )}
       </div>
-      <div className='m-4 bg-slate-600 bg-opacity-60 rounded-xl shadow-2xl shadow-black border border-teal-100 w-full'>
+      <div
+        className={
+          theme == 'light'
+            ? 'm-4 bg-white bg-opacity-20 rounded-xl shadow-2xl shadow-black border border-teal-100 w-full'
+            : 'm-4 bg-white bg-opacity-10 rounded-xl shadow-2xl shadow-black border border-teal-100 w-full'
+        }
+      >
         {weatherForDay(infoClima[0]?.forecast?.forecastday)}
       </div>
-      <div className='flex justify-around h-cover bg-slate-600 bg-opacity-60 rounded-xl border border-teal-100  shadow-2xl shadow-black w-full'>
+      <div
+        className={
+          theme == 'light'
+            ? 'flex justify-around h-cover bg-white bg-opacity-20 rounded-xl border border-teal-100  shadow-2xl shadow-black w-full'
+            : 'flex justify-around h-cover bg-white bg-opacity-10 rounded-xl border border-teal-100  shadow-2xl shadow-black w-full'
+        }
+      >
         <div>
           <h3>Amanecer</h3>
           <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro.sunrise}</h3>
@@ -72,7 +102,13 @@ const CardWeather = () => {
           <IconSunset />
         </div>
       </div>
-      <div className='flex justify-around h-cover bg-slate-600 bg-opacity-60 rounded-xl border border-teal-100 m-4 shadow-2xl shadow-neutral-800  w-full'>
+      <div
+        className={
+          theme == 'light'
+            ? 'flex justify-around h-cover bg-white bg-opacity-20 rounded-xl border border-teal-100 m-4 shadow-2xl shadow-neutral-800  w-full'
+            : 'flex justify-around h-cover bg-white bg-opacity-10 rounded-xl border border-teal-100 m-4 shadow-2xl shadow-neutral-800  w-full'
+        }
+      >
         <div className='flex-col text-center mx-2'>
           <IndexUV />
           <h3>Índice UV</h3>
@@ -90,7 +126,7 @@ const CardWeather = () => {
         </div>
       </div>
       <button
-        className='font-semibold text-lg bg-gray-600 bg-opacity-70 p-1 rounded-md'
+        className='font-semibold text-lg bg-white bg-opacity-20 p-1 rounded-md'
         onClick={handleClick}
       >
         Actualizar

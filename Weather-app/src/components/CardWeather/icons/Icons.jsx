@@ -207,6 +207,7 @@ export const IconCloudStorm = () => {
       className='icon icon-tabler icon-tabler-cloud-storm'
       width={60}
       height={60}
+      color='grey'
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -350,7 +351,7 @@ export const IconHumidity = () => {
       className='icon icon-tabler icon-tabler-mist'
       width={60}
       height={60}
-      color='white'
+      color='rgb(180,180,180)'
       viewBox='0 0 24 24'
       stroke-width={1.25}
       stroke='currentColor'

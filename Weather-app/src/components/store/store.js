@@ -9,6 +9,7 @@ export const useWeatherStore = create(
       //state
       infoClima: [],
       busqueda: [],
+      theme: 'light',
       // actions
       fetchData: async (lugar) => {
         const { data } = await axios(
@@ -30,6 +31,13 @@ export const useWeatherStore = create(
           busqueda: (state.busqueda = data),
         }));
       },
+      setTheme: () =>
+        set((state) => ({
+          theme:
+            state.theme == 'light'
+              ? (state.theme = 'dark')
+              : (state.theme = 'light'),
+        })),
     }),
     {
       name: 'weather',

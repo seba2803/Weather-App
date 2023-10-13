@@ -3,15 +3,6 @@
 @tailwind utilities;
 
 :root {
-  background-image: linear-gradient(
-    rgb(150, 150, 150),
-    rgb(64, 64, 210),
-    rgb(40, 40, 200),
-    rgb(120, 120, 200),
-    black
-  );
-  background-position: center;
-  background-attachment: fixed;
   /* font-family: system-ui; */
   /* color-scheme: light dark; */
   font-synthesis: none;
