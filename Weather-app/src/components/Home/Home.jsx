@@ -7,11 +7,14 @@ const Home = () => {
   // para estilos
   const [cambio, setCambio] = useState(false);
 
-  const [busqueda, fetchBusqueda, fetchData] = useWeatherStore((state) => [
-    state.busqueda,
-    state.fetchBusqueda,
-    state.fetchData,
-  ]);
+  const [busqueda, fetchBusqueda, fetchData, theme] = useWeatherStore(
+    (state) => [
+      state.busqueda,
+      state.fetchBusqueda,
+      state.fetchData,
+      state.theme,
+    ]
+  );
 
   const handleChange = (event) => {
     setLugar(event.target.value);
@@ -35,11 +38,12 @@ const Home = () => {
   };
 
   const navigate = useNavigate();
-
+  console.log(busqueda);
   const handleClick = () => {
-    if (lugar.length >= 20 || lugar.length >= 15) {
+    if (lugar.length >= 20 || lugar.length >= 5) {
       fetchData(lugar);
       navigate('/detail');
+      setLugar('');
     }
   };
 
@@ -50,7 +54,7 @@ const Home = () => {
       </h2> */}
       <div className='flex-wrap justify-center text-center'>
         <input
-          className='lg:w-72 h-8 rounded-lg text-black phone:w-48'
+          className='lg:w-72 h-8 rounded-lg text-black phone:w-48 p-2'
           type='search'
           placeholder='Ingrese su ubicación para continuar...'
           value={lugar}
@@ -59,8 +63,8 @@ const Home = () => {
         <button
           onClick={handleClick}
           className={
-            cambio || !lugar.length || lugar.length < 15
-              ? 'border-2 rounded-lg text-2xl bg-green-800 bg-opacity-40 w-12 h-8 m-2 disable cursor-not-allowed'
+            (cambio && !lugar.length) || lugar.length < 4
+              ? 'border-2 rounded-lg text-2xl bg-green-800 bg-opacity-40 w-12 h-8 m-2 cursor-not-allowed'
               : 'border-2 rounded-lg text-2xl bg-green-800 bg-opacity-60 w-12 h-8 m-2 hover:bg-green-400 hover:scale-125 transition ease-out duration-700'
           }
         >
@@ -70,14 +74,23 @@ const Home = () => {
       <div className='flex text-center justify-center h-fit'>
         <ul
           className={
-            cambio
-              ? 'flex-col border-2 rounded-xl p-2 m-2 w-full text-center  phone:w-fit divide-y scroll-pt-52 '
+            cambio &&
+            lugar.length > 3 &&
+            `${`${busqueda[0].name},${busqueda[0].region}`.toLocaleLowerCase()}` !=
+              lugar.toLocaleLowerCase()
+              ? 'flex-col border-2 border-black bg-black bg-opacity-20  rounded-xl p-2 m-2 w-full text-center  phone:w-fit divide-y'
               : 'hidden'
           }
         >
           {busqueda?.map((val, index) => (
-            <li>
-              <label className='m-2 w-full sw hover:text-emerald-700 phone:m-4'>
+            <li className='p-1'>
+              <label
+                className={
+                  theme == 'dark'
+                    ? 'm-2 w-full sw text-blue-300 hover:text-white phone:m-4'
+                    : 'm-2 w-full sw text-blue-600 hover:text-white phone:m-4'
+                }
+              >
                 {' '}
                 {val.name}, {val.region}
                 <input

@@ -32,9 +32,9 @@ function App() {
         }
       >
         <Home />
-        <button onClick={handleClick}>
+        <button className='h-fit' onClick={handleClick}>
           <img
-            className='h-10'
+            className='h-12'
             src={theme == 'light' ? moon : moonFilled}
             alt='moon'
           />
