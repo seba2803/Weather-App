@@ -67,5 +67,6 @@ export function iconType(isDay, condition) {
   )
     return <IconNight />;
   else if (condition == 'Clear') return <IconMoonClear />;
+  else if (condition.includes('snow')) return <IconCloudSnow />;
   else return <IconCloudStorm />;
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useWeatherStore } from '../store/store';
 import { useNavigate } from 'react-router-dom';
+import search from '../../assets/search.svg';
 
 const Home = () => {
   const [lugar, setLugar] = useState('');
@@ -38,7 +39,6 @@ const Home = () => {
   };
 
   const navigate = useNavigate();
-  console.log(busqueda);
   const handleClick = () => {
     if (lugar.length >= 20 || lugar.length >= 5) {
       fetchData(lugar);
@@ -53,23 +53,26 @@ const Home = () => {
         Ingrese su ubicación para continuar
       </h2> */}
       <div className='flex-wrap justify-center text-center'>
-        <input
-          className='lg:w-72 h-8 rounded-lg text-black phone:w-48 p-2'
-          type='search'
-          placeholder='Ingrese su ubicación para continuar...'
-          value={lugar}
-          onChange={handleChange}
-        />
-        <button
-          onClick={handleClick}
-          className={
-            (cambio && !lugar.length) || lugar.length < 4
-              ? 'border-2 rounded-lg text-2xl bg-green-800 bg-opacity-40 w-12 h-8 m-2 cursor-not-allowed'
-              : 'border-2 rounded-lg text-2xl bg-green-800 bg-opacity-60 w-12 h-8 m-2 hover:bg-green-400 hover:scale-125 transition ease-out duration-700'
-          }
-        >
-          ➜
-        </button>
+        <div className='flex justify-center items-center'>
+          <input
+            className='lg:w-72 h-8 rounded-lg text-black phone:w-48 p-2'
+            type='search'
+            placeholder='Ingrese su ubicación para continuar...'
+            value={lugar}
+            onChange={handleChange}
+          />
+          <button onClick={handleClick}>
+            <img
+              className={
+                (cambio && !lugar.length) || lugar.length < 4
+                  ? 'text-2x1 w-12 h-8 m-2 cursor-not-allowed'
+                  : 'rounded-lg text-2xl w-12 h-8 m-2 hover:bg-green-400 hover:scale-125 transition ease-out duration-700'
+              }
+              src={search}
+              alt='lupa'
+            />
+          </button>
+        </div>
       </div>
       <div className='flex text-center justify-center h-fit'>
         <ul

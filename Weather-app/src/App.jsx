@@ -3,8 +3,9 @@ import Home from './components/Home/Home';
 import CardWeather from './components/CardWeather/CardWather';
 import { Routes, Route } from 'react-router-dom';
 import moon from './assets/moon.svg';
-import moonFilled from './assets/moonFilled.svg';
+import sun from './assets/sun.svg';
 import { useWeatherStore } from './components/store/store';
+import Footer from './components/Footer/Footer';
 
 function App() {
   const [theme, setTheme] = useWeatherStore((state) => [
@@ -35,7 +36,7 @@ function App() {
         <button className='h-fit' onClick={handleClick}>
           <img
             className='h-12'
-            src={theme == 'light' ? moon : moonFilled}
+            src={theme == 'light' ? moon : sun}
             alt='moon'
           />
         </button>
@@ -44,6 +45,7 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/detail' element={<CardWeather />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

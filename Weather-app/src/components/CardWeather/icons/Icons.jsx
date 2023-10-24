@@ -139,6 +139,7 @@ export const IconCloudRain = () => {
       className='icon icon-tabler icon-tabler-cloud-rain'
       width={60}
       height={60}
+      color='rgb(190,190,190)'
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
@@ -185,6 +186,7 @@ export const IconCloudSnow = () => {
       className='icon icon-tabler icon-tabler-cloud-snow'
       width={60}
       height={60}
+      color='rgb(190,190,190)'
       viewBox='0 0 24 24'
       stroke-width='2'
       stroke='currentColor'
