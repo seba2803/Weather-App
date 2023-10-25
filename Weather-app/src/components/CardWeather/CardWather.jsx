@@ -126,7 +126,7 @@ const CardWeather = () => {
         </div>
       </div>
       <button
-        className='font-semibold text-lg bg-white bg-opacity-20 p-1 rounded-md'
+        className='font-semibold text-lg w-44 bg-white bg-opacity-20 hover:bg-opacity-40 p-1 m-5 rounded-md'
         onClick={handleClick}
       >
         Actualizar

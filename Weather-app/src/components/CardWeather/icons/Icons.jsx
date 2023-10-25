@@ -48,7 +48,7 @@ export const IconSun = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-sun-filled'
+      className='icon icon-tabler icon-tabler-sun-filled m-2'
       width={60}
       height={60}
       color='yellow'
@@ -116,6 +116,7 @@ export const IconPartlyCloud = () => {
     <svg
       width={60}
       height={60}
+      className='m-2'
       viewBox='0 0 24 24'
       color='rgb(160,160,160)'
       fill='none'
@@ -136,7 +137,7 @@ export const IconCloudRain = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-cloud-rain'
+      className='icon icon-tabler icon-tabler-cloud-rain m-2'
       width={60}
       height={60}
       color='rgb(190,190,190)'
@@ -158,7 +159,7 @@ export const IconCloudy = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-cloud-filled'
+      className='icon icon-tabler icon-tabler-cloud-filled m-2'
       width={60}
       height={60}
       color='grey'
@@ -183,7 +184,7 @@ export const IconCloudSnow = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-cloud-snow'
+      className='icon icon-tabler icon-tabler-cloud-snow m-2'
       width={60}
       height={60}
       color='rgb(190,190,190)'
@@ -206,7 +207,7 @@ export const IconCloudStorm = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-cloud-storm'
+      className='icon icon-tabler icon-tabler-cloud-storm m-2'
       width={60}
       height={60}
       color='grey'
@@ -231,7 +232,7 @@ export const IconMoonClear = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-moon-stars'
+      className='icon icon-tabler icon-tabler-moon-stars m-2'
       width={60}
       height={60}
       color='yellow'
@@ -255,7 +256,7 @@ export const IconNight = () => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      className='icon icon-tabler icon-tabler-moon'
+      className='icon icon-tabler icon-tabler-moon m-2'
       width={60}
       height={60}
       color='yellow'

@@ -21,8 +21,8 @@ function App() {
     <div
       className={
         theme == 'light'
-          ? `flex-col bg-fixed bg-center bg-cover min-h-screen m-0 p-0 transition duration-700 ease-in-out bg-gradient-to-b from-blue-200 via-green-300 to-blue-400`
-          : `flex-col bg-fixed bg-center bg-cover min-h-screen m-0 p-0 transition duration-700 ease-in-out bg-gradient-to-b from-blue-900 via-green-950 to-blue-950 `
+          ? `flex-col bg-fixed bg-center bg-cover min-h-screen m-0 p-0 bg-gradient-to-b from-blue-200 via-green-300 to-blue-400`
+          : `flex-col bg-fixed bg-center bg-cover min-h-screen m-0 p-0 bg-gradient-to-b from-blue-900 via-green-950 to-blue-950 `
       }
     >
       <div
