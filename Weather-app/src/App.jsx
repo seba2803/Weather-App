@@ -4,7 +4,9 @@ import CardWeather from './components/CardWeather/CardWather';
 import { Routes, Route } from 'react-router-dom';
 import moon from './assets/moon.svg';
 import sun from './assets/sun.svg';
+import weatherApp from './assets/weatherApp.png';
 import { useWeatherStore } from './components/store/store';
+import { useNavigate } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
 function App() {
@@ -13,8 +15,13 @@ function App() {
     state.setTheme,
   ]);
 
-  const handleClick = () => {
+  const handleTheme = () => {
     setTheme();
+  };
+
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate('/');
   };
 
   return (
@@ -28,12 +35,15 @@ function App() {
       <div
         className={
           theme == 'light'
-            ? 'flex relative justify-around h-fit w-full p-2 bg-green-200 bg-opacity-80 shadow-xl'
-            : 'flex relative justify-around h-fit w-full p-2 bg-green-800 bg-opacity-40 shadow-xl'
+            ? 'flex relative justify-between h-fit w-full p-2 bg-green-200 bg-opacity-80 shadow-xl'
+            : 'flex relative justify-between h-fit w-full p-2 bg-green-800 bg-opacity-40 shadow-xl'
         }
       >
+        <button onClick={handleClick} className='h-fit'>
+          <img className='h-12' src={weatherApp} alt='logo' />
+        </button>
         <Home />
-        <button className='h-fit' onClick={handleClick}>
+        <button className='h-fit' onClick={handleTheme}>
           <img
             className='h-12'
             src={theme == 'light' ? moon : sun}
@@ -45,7 +55,9 @@ function App() {
         <Route path='/' element={<LandingPage />} />
         <Route path='/detail' element={<CardWeather />} />
       </Routes>
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -4,6 +4,8 @@ export default {
   theme: {
     screens: {
       phone: '320px',
+      max_phone: '360px',
+      tablet: '768px',
     },
     extend: {},
   },
