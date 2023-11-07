@@ -43,7 +43,13 @@ const Home = () => {
 
   const navigate = useNavigate();
   const handleClick = () => {
-    if (lugar.length >= 20 || lugar.length >= 5) {
+    const exist = busqueda.find((obj) =>
+      `${obj.name}, ${obj.region}`
+        .toLocaleLowerCase()
+        .includes(lugar.toLocaleLowerCase())
+    );
+
+    if (lugar.length >= 20 || (lugar.length >= 5 && exist)) {
       fetchData(lugar);
       navigate('/detail');
       setLugar('');
@@ -62,7 +68,7 @@ const Home = () => {
               className={
                 (cambio && !lugar.length) || lugar.length < 4
                   ? 'text-2x1 w-9 h-8 m-2 cursor-not-allowed'
-                  : 'rounded-3xl text-2xl w-10 h-8 m-2 bg-green-400 hover:scale-125 transition ease-out duration-700'
+                  : 'rounded-3xl text-2xl w-10 h-8 m-2 bg-green-300 animate-pulse hover:scale-125 transition ease-out duration-700'
               }
               src={search}
               alt='lupa'
