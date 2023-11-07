@@ -39,13 +39,13 @@ function App() {
             : 'flex relative justify-between h-fit w-full p-2 bg-green-800 bg-opacity-40 shadow-xl'
         }
       >
-        <button onClick={handleClick} className='h-fit'>
-          <img className='h-12' src={weatherApp} alt='logo' />
+        <button onClick={handleClick} className='h-fit mx-2 mt-1'>
+          <img className='h-14' src={weatherApp} alt='logo' />
         </button>
         <Home />
-        <button className='h-fit' onClick={handleTheme}>
+        <button className='h-fit mx-2 mt-1' onClick={handleTheme}>
           <img
-            className='h-12'
+            className='h-14'
             src={theme == 'light' ? moon : sun}
             alt='moon'
           />

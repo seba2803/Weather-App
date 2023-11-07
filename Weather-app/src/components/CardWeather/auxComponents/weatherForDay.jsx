@@ -5,7 +5,6 @@ export const weatherForDay = (forecast) => {
   if (!forecast) {
     return;
   }
-  console.log(forecast);
 
   return forecast.map((el, index) => (
     <div className='flex m-3 justify-between text-left font-normal'>

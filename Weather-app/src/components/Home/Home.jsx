@@ -26,7 +26,9 @@ const Home = () => {
       event.target.value.length <= 18 &&
       event.target.id != 'lugar'
     )
-      fetchBusqueda(event.target.value);
+      setTimeout(() => {
+        fetchBusqueda(event.target.value);
+      }, 1000);
 
     if (
       event.target.value.length >= 20 ||
@@ -60,7 +62,7 @@ const Home = () => {
               className={
                 (cambio && !lugar.length) || lugar.length < 4
                   ? 'text-2x1 w-9 h-8 m-2 cursor-not-allowed'
-                  : 'rounded-3xl text-2xl w-9 h-8 m-2 hover:bg-green-400 hover:scale-125 transition ease-out duration-700'
+                  : 'rounded-3xl text-2xl w-10 h-8 m-2 bg-green-400 hover:scale-125 transition ease-out duration-700'
               }
               src={search}
               alt='lupa'
@@ -80,7 +82,7 @@ const Home = () => {
               className={
                 cambio &&
                 lugar.length > 3 &&
-                `${`${busqueda[0].name},${busqueda[0].region}`.toLocaleLowerCase()}` !=
+                `${`${busqueda[0]?.name},${busqueda[0]?.region}`.toLocaleLowerCase()}` !=
                   lugar.toLocaleLowerCase()
                   ? 'flex-col border-2 border-black bg-black bg-opacity-20  rounded-xl p-2 m-2 text-center  phone:w-36 max_phone:w-52 tablet:w-64 divide-y'
                   : 'hidden'

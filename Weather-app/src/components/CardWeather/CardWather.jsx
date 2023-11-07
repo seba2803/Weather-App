@@ -1,9 +1,9 @@
 import { useWeatherStore } from '../store/store';
-// import { useEffect } from 'react';
-import Home from '../Home/Home';
+import actualizar from '../../assets/actualizar.svg';
 import { IndexUV, IconDrop, IconWind } from './icons/Icons';
 import { IconSunrise, IconSunset } from './icons/Icons';
 import { weatherForHour } from './auxComponents/weatherForHour';
+import { useState } from 'react';
 import { weatherForDay } from './auxComponents/weatherForDay';
 import { iconType } from './auxComponents/weatherForHour';
 
@@ -14,7 +14,13 @@ const CardWeather = () => {
     state.theme,
   ]);
 
+  const [timing, setTiming] = useState(false);
+
   const handleClick = () => {
+    setTiming(true);
+    setTimeout(() => {
+      setTiming(false);
+    }, 1500);
     fetchData(
       `${infoClima[0]?.location?.name}, ${infoClima[0]?.location?.region}`
     );
@@ -44,7 +50,7 @@ const CardWeather = () => {
         }
       >
         <div className='flex'>
-          <h1 className='m-5 font-bold text-5xl phone:font-semibold phone:text-3xl'>
+          <h1 className='m-5 tablet:font-bold tablet:text-5xl phone:font-semibold phone:text-3xl'>
             {infoClima[0]?.current?.temp_c} °C
           </h1>
           <div className='mx-10 mt-3'>
@@ -57,11 +63,26 @@ const CardWeather = () => {
         <h2 className='font-normal text-left text-3xl mx-4 mt-4'>
           {infoClima[0]?.location?.name}, {infoClima[0]?.location?.region}
         </h2>
-        <h4 className='font-normal text-left text-lg mx-4 mt-2 phone:text-sm phone:font-semibold phone:mt-8'>
+        <h4 className='font-normal text-left text-lg mx-4 mt-2 tablet:text-lg phone:text-sm phone:font-semibold phone:mt-8'>
           {Math.floor(infoClima[0]?.forecast.forecastday[0].day.maxtemp_c)} °/
           {Math.floor(infoClima[0]?.forecast.forecastday[0].day.mintemp_c)} °
           Sensación térmica {Math.floor(infoClima[0]?.current.feelslike_c)} °
         </h4>
+        <div className='flex'>
+          <h3 className='font-normal text-left text-lg mx-4 tablet:text-lg phone:text-sm phone:font-semibold phone:mt-4'>
+            {infoClima[0]?.location?.localtime.split(' ')[1]}
+          </h3>{' '}
+          <button
+            className='h-fit bg-white bg-opacity-10 hover:bg-opacity-40 mt-3 p-1 rounded-md'
+            onClick={handleClick}
+          >
+            <img
+              className={timing ? 'h-7 animate-spin' : 'h-7'}
+              src={actualizar}
+              alt='actualizar'
+            />
+          </button>
+        </div>
       </div>
       <div
         className={
@@ -125,12 +146,6 @@ const CardWeather = () => {
           <p>{infoClima[0]?.current.wind_kph} Km/h</p>
         </div>
       </div>
-      <button
-        className='font-semibold text-lg w-44 bg-white bg-opacity-20 hover:bg-opacity-40 p-1 m-5 rounded-md'
-        onClick={handleClick}
-      >
-        Actualizar
-      </button>
     </div>
   );
 };
