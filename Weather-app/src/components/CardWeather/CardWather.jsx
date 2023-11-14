@@ -55,8 +55,8 @@ const CardWeather = () => {
           </h1>
           <div className='mx-10 mt-3'>
             {iconType(
-              infoClima[0]?.current.is_day,
-              infoClima[0]?.current.condition.text
+              infoClima[0]?.current?.is_day,
+              infoClima[0]?.current?.condition?.text
             )}
           </div>
         </div>
@@ -64,9 +64,10 @@ const CardWeather = () => {
           {infoClima[0]?.location?.name}, {infoClima[0]?.location?.region}
         </h2>
         <h4 className='font-normal text-left text-lg mx-4 mt-2 tablet:text-lg phone:text-sm phone:font-semibold phone:mt-8'>
-          {Math.floor(infoClima[0]?.forecast.forecastday[0].day.maxtemp_c)} °/
-          {Math.floor(infoClima[0]?.forecast.forecastday[0].day.mintemp_c)} °
-          Sensación térmica {Math.floor(infoClima[0]?.current.feelslike_c)} °
+          {Math.floor(infoClima[0]?.forecast?.forecastday[0]?.day?.maxtemp_c)}{' '}
+          °/
+          {Math.floor(infoClima[0]?.forecast?.forecastday[0]?.day?.mintemp_c)} °
+          Sensación térmica {Math.floor(infoClima[0]?.current?.feelslike_c)} °
         </h4>
         <div className='flex'>
           <h3 className='font-normal text-left text-lg mx-4 tablet:text-lg phone:text-sm phone:font-semibold phone:mt-4'>
@@ -114,12 +115,12 @@ const CardWeather = () => {
       >
         <div>
           <h3>Amanecer</h3>
-          <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro.sunrise}</h3>
+          <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro?.sunrise}</h3>
           <IconSunrise />
         </div>
         <div>
           <h3>Atardecer</h3>
-          <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro.sunset}</h3>
+          <h3>{infoClima[0]?.forecast?.forecastday[1]?.astro?.sunset}</h3>
           <IconSunset />
         </div>
       </div>
@@ -133,17 +134,17 @@ const CardWeather = () => {
         <div className='flex-col text-center mx-2'>
           <IndexUV />
           <h3>Índice UV</h3>
-          <p>{controlUV(infoClima[0]?.current.uv)}</p>
+          <p>{controlUV(infoClima[0]?.current?.uv)}</p>
         </div>
         <div className='flex-col text-center mx-2'>
           <IconDrop />
           <h3>Humedad</h3>
-          <p>{infoClima[0]?.current.humidity}%</p>
+          <p>{infoClima[0]?.current?.humidity}%</p>
         </div>
         <div className='flex-col text-center mx-2'>
           <IconWind />
           <h3>Viento</h3>
-          <p>{infoClima[0]?.current.wind_kph} Km/h</p>
+          <p>{infoClima[0]?.current?.wind_kph} Km/h</p>
         </div>
       </div>
     </div>
