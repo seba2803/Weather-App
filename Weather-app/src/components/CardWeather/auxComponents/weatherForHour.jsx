@@ -12,7 +12,7 @@ import {
 
 export const weatherForHour = (hour, infoClima) => {
   // desestructuro la fecha y horario de hour
-  if (!hour) {
+  if (!hour || !infoClima) {
     return;
   }
   const [fecha, horario] = hour;

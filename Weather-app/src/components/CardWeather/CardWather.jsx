@@ -64,14 +64,20 @@ const CardWeather = () => {
           {infoClima[0]?.location?.name}, {infoClima[0]?.location?.region}
         </h2>
         <h4 className='font-normal text-left text-lg mx-4 mt-2 tablet:text-lg phone:text-sm phone:font-semibold phone:mt-8'>
-          {Math.floor(infoClima[0]?.forecast?.forecastday[0]?.day?.maxtemp_c)}{' '}
+          {infoClima[0] &&
+            Math.floor(
+              infoClima[0]?.forecast?.forecastday[0]?.day?.maxtemp_c
+            )}{' '}
           °/
-          {Math.floor(infoClima[0]?.forecast?.forecastday[0]?.day?.mintemp_c)} °
-          Sensación térmica {Math.floor(infoClima[0]?.current?.feelslike_c)} °
+          {infoClima[0] &&
+            Math.floor(
+              infoClima[0]?.forecast?.forecastday[0]?.day?.mintemp_c
+            )}{' '}
+          ° Sensación térmica {Math.floor(infoClima[0]?.current?.feelslike_c)} °
         </h4>
         <div className='flex'>
           <h3 className='font-normal text-left text-lg mx-4 tablet:text-lg phone:text-sm phone:font-semibold phone:mt-4'>
-            {infoClima[0]?.location?.localtime.split(' ')[1]}
+            {infoClima[0] && infoClima[0]?.location?.localtime?.split(' ')[1]}
           </h3>{' '}
           <button
             className='h-fit bg-white bg-opacity-10 hover:bg-opacity-40 mt-3 p-1 rounded-md'
@@ -93,7 +99,7 @@ const CardWeather = () => {
         }
       >
         {weatherForHour(
-          infoClima[0]?.location?.localtime.split(' '),
+          infoClima[0]?.location?.localtime?.split(' '),
           infoClima[0]?.forecast?.forecastday
         )}
       </div>
