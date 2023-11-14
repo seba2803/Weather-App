@@ -44,6 +44,7 @@ const Home = () => {
   const navigate = useNavigate();
   const handleClick = () => {
     console.log('busqueda', busqueda);
+    console.log('input lugar', lugar);
     const exist = busqueda?.find((obj) =>
       `${obj?.name}, ${obj?.region}`
         .toLocaleLowerCase()
