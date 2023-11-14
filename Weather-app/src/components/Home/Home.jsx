@@ -47,8 +47,8 @@ const Home = () => {
     console.log('input lugar', lugar);
     const exist = busqueda?.find((obj) =>
       `${obj?.name}, ${obj?.region}`
-        .toLocaleLowerCase()
-        .includes(lugar.toLocaleLowerCase())
+        ?.toLocaleLowerCase()
+        ?.includes(lugar?.toLocaleLowerCase())
     );
     console.log('resultado del find', exist);
     if (lugar.length >= 20 || (lugar.length >= 5 && exist)) {
