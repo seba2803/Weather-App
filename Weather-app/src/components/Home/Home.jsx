@@ -45,8 +45,10 @@ const Home = () => {
   const handleClick = () => {
     if (lugar.length >= 20 || lugar.length >= 5) {
       fetchData(lugar);
-      navigate('/detail');
-      setLugar('');
+      setTimeout(() => {
+        navigate('/detail');
+        setLugar('');
+      }, 1000);
     }
   };
 
