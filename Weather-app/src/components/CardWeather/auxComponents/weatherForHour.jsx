@@ -36,7 +36,7 @@ export const weatherForHour = (hour, infoClima) => {
       className='flex-col hover:scale-105 transition ease-out duration-400  m-3 text-center'
     >
       <h3 className='mb-2'>{el.time.split(' ')[1]}</h3>
-      {iconType(el.is_day, el.condition.text)}
+      {iconType(el?.is_day, el?.condition?.text)}
       <h3 className='m-1'>{el.temp_c} °</h3>
       <h3>Humedad</h3>
       <IconHumidity />

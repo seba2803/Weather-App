@@ -16,13 +16,16 @@ export const weatherForDay = (forecast) => {
         }`}</h3>
       )}
       <div className='flex p-2 justify-center'>
-        {iconType(1, el.day?.condition?.text)} <IconNight />
+        {iconType(1, el?.day?.condition?.text)} <IconNight />
       </div>
       <div className='flex text-center justify-center'>
         <h3 className='phone:text-lg  mt-4'>
-          {Math.round(el.day.maxtemp_c)}°/
+          {Math.round(el?.day?.maxtemp_c)}°/
         </h3>
-        <h3 className='phone:text-lg mt-4'> {Math.floor(el.day.mintemp_c)}°</h3>
+        <h3 className='phone:text-lg mt-4'>
+          {' '}
+          {Math.floor(el?.day?.mintemp_c)}°
+        </h3>
       </div>
     </div>
   ));
