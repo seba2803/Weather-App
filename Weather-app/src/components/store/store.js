@@ -12,14 +12,23 @@ export const useWeatherStore = create(
       theme: 'light',
       // actions
       fetchData: async (lugar) => {
-        const { data } = await axios(
-          `${import.meta.env.VITE_BASE_URL}/forecast.json?key=${
-            import.meta.env.VITE_API_KEY
-          }&q=${lugar}&days=5`
-        );
-        set((state) => ({
-          infoClima: (state.infoClima = [data]),
-        }));
+        try {
+          const { data } = await axios(
+            `${import.meta.env.VITE_BASE_URL}/forecast.json?key=${
+              import.meta.env.VITE_API_KEY
+            }&q=${lugar}&days=5`
+          );
+          // Verificar si 'data' y 'data.current' existen antes de actualizar el estado
+          if (data && data.current) {
+            set((state) => ({
+              infoClima: (state.infoClima = [data]),
+            }));
+          } else {
+            console.error('Datos de clima incompletos o incorrectos:', data);
+          }
+        } catch (error) {
+          console.error('Error al obtener datos de clima:', error);
+        }
       },
       fetchBusqueda: async (lugar) => {
         const { data } = await axios(

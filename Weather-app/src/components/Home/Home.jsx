@@ -43,14 +43,6 @@ const Home = () => {
 
   const navigate = useNavigate();
   const handleClick = () => {
-    // console.log('input lugar', lugar);
-    // const exist = busqueda?.find((obj) => {
-    //   console.log('cada objeto del find', obj);
-    //   return `${obj?.name},${obj?.region}`
-    //     ?.toLocaleLowerCase()
-    //     ?.includes(lugar?.toLocaleLowerCase());
-    // });
-    // console.log('resultado del find', exist);
     if (lugar.length >= 20 || lugar.length >= 5) {
       fetchData(lugar);
       navigate('/detail');
@@ -60,9 +52,6 @@ const Home = () => {
 
   return (
     <div className='flex-col flex-wrap text-center justify-center items-center'>
-      {/* <h2 className='font-semibold text-lg mb-2'>
-        Ingrese su ubicación para continuar
-      </h2> */}
       <div className='flex-wrap justify-center text-center items-center'>
         <div className='flex justify-center items-center bg-slate-600 bg-opacity-60 rounded-3xl w-fit m-2'>
           <button onClick={handleClick}>
