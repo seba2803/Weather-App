@@ -43,11 +43,14 @@ const Home = () => {
 
   const navigate = useNavigate();
   const handleClick = () => {
-    const exist = busqueda.find((obj) =>
-      `${obj.name}, ${obj.region}`
-        .toLocaleLowerCase()
-        .includes(lugar.toLocaleLowerCase())
-    );
+    let exist;
+    if (busqueda) {
+      exist = busqueda.find((obj) =>
+        `${obj?.name}, ${obj?.region}`
+          .toLocaleLowerCase()
+          .includes(lugar.toLocaleLowerCase())
+      );
+    }
 
     if (lugar.length >= 20 || (lugar.length >= 5 && exist)) {
       fetchData(lugar);
